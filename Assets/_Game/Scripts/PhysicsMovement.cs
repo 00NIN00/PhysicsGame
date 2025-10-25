@@ -2,17 +2,12 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class PhysicsMovement
+    public class PhysicsMovement : PhysicsApplication
     {
-        private Rigidbody _rigidbody;
-        private float _force;
-
-        public PhysicsMovement(Rigidbody rigidbody, float force)
+        public PhysicsMovement(Rigidbody rigidbody, float force) : base(rigidbody, force)
         {
-            _rigidbody = rigidbody;
-            _force = force;
         }
-
+        
         public void MoveTo(Vector3 direction)
         {
             _rigidbody.AddForce(direction * _force);
