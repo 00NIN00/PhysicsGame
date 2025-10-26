@@ -821,6 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1849488857}
   - component: {fileID: 1849488856}
+  - component: {fileID: 1849488858}
   m_Layer: 0
   m_Name: GameRules
   m_TagString: Untagged
@@ -858,6 +859,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849488858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849488855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9ad759500948adbda75ce239893d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameRules: {fileID: 1849488856}
+  _wallet: {fileID: 9633104}
+  _player: {fileID: 9633098}
+  _coins:
+  - {fileID: 1092236586}
 --- !u!1 &1854390826
 GameObject:
   m_ObjectHideFlags: 0

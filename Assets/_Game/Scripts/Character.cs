@@ -15,14 +15,16 @@ namespace _Game.Scripts
 
         [SerializeField] private float _force;
         [SerializeField] private float _forceJump;
+        
+        private Rigidbody _rigidbody;
 
         private void Awake()
         {
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            _rigidbody = GetComponent<Rigidbody>();
             _groundChecker = GetComponent<GroundChecker>();
 
-            _physicsMovement = new PhysicsMovement(rigidbody, _force);
-            _physicsJump = new PhysicsJump(rigidbody, _forceJump);
+            _physicsMovement = new PhysicsMovement(_rigidbody, _force);
+            _physicsJump = new PhysicsJump(_rigidbody, _forceJump);
         }
 
         public void SetInput(Vector3 input, bool jumpInput)
@@ -50,6 +52,12 @@ namespace _Game.Scripts
         private void Move()
         {
             _physicsMovement.MoveTo(_input);
+        }
+
+        public void Reset()
+        {
+            _rigidbody.isKinematic = true;
+            _rigidbody.isKinematic = false;
         }
     }
 }

@@ -17,6 +17,8 @@ public class GameRules : MonoBehaviour
     private void Update()
     {
         _timer.Update();
+        Debug.Log($"Time: {_timer._currentTime}");
+        Debug.Log($"Cout: {_wallet.Value}/{_cout}");
 
         if (_timer._isDone && _wallet.Value < _cout)
         {
@@ -27,6 +29,11 @@ public class GameRules : MonoBehaviour
         {
             Win();            
         }
+    }
+
+    public void Restart()
+    {
+        _timer.Reset();
     }
 
     private void Win()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _Game.Scripts
@@ -22,6 +23,11 @@ namespace _Game.Scripts
             {
                 _value += value;
             }
+        }
+
+        public void Reset()
+        {
+            _value = 0;
         }
     }
 }
