@@ -2,10 +2,15 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class PhysicsJump : PhysicsApplication
+    public class PhysicsJump
     {
-        public PhysicsJump(Rigidbody rigidbody, float force) : base(rigidbody, force)
+        private Rigidbody _rigidbody;
+        private float _force;
+
+        public PhysicsJump(Rigidbody rigidbody, float force)
         {
+            _rigidbody = rigidbody;
+            _force = force;
         }
 
         public void Jump()

@@ -2,10 +2,15 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class PhysicsMovement : PhysicsApplication
+    public class PhysicsMovement
     {
-        public PhysicsMovement(Rigidbody rigidbody, float force) : base(rigidbody, force)
+        private Rigidbody _rigidbody;
+        private float _force;
+
+        public PhysicsMovement(Rigidbody rigidbody, float force)
         {
+            _rigidbody = rigidbody;
+            _force = force;
         }
         
         public void MoveTo(Vector3 direction)
