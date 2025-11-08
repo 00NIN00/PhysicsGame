@@ -8,7 +8,7 @@ public class GameRules : MonoBehaviour
 
     [SerializeField] private float _time;
     [SerializeField] private int _cout;
-
+    
     private void Awake()
     {
         _timer = new Timer(_time);
@@ -24,10 +24,9 @@ public class GameRules : MonoBehaviour
         {
             Lose();
         }
-        
-        if (_wallet.Value >= _cout)
+        else if (_wallet.Value >= _cout)
         {
-            Win();            
+            Win();
         }
     }
 
