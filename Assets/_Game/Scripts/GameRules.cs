@@ -17,9 +17,9 @@ public class GameRules : MonoBehaviour
     private void Update()
     {
         _timer.Update();
-        Debug.Log($"Time: {_timer._currentTime}");
-        Debug.Log($"Cout: {_wallet.Value}/{_cout}");
-
+        
+        DebugTimeAndCount();
+        
         if (_timer._isDone && _wallet.Value < _cout)
         {
             Lose();
@@ -44,5 +44,11 @@ public class GameRules : MonoBehaviour
     private void Lose()
     {
         Debug.Log("Lose");
+    }
+
+    private void DebugTimeAndCount()
+    {
+        Debug.Log($"Time: {_timer._currentTime}");
+        Debug.Log($"Cout: {_wallet.Value}/{_cout}");
     }
 }
