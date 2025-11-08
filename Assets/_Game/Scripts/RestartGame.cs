@@ -10,7 +10,7 @@ namespace _Game.Scripts
         [SerializeField] private GameRules _gameRules;
         [SerializeField] private Wallet _wallet;
         [SerializeField] private Character _player;
-        [SerializeField] private PickupObject[] _coins;
+        [SerializeField] private PickupCoin[] _coins;
 
         private void Update()
         {

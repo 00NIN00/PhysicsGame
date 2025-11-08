@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class PickupObject : MonoBehaviour
+    public class PickupCoin : MonoBehaviour
     {
         [SerializeField] private int _value;
         

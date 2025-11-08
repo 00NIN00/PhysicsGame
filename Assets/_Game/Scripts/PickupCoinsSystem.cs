@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class PickupSystem : MonoBehaviour
+    public class PickgupCoinsSystem : MonoBehaviour
     {
         private Queue<int> _moneys =  new Queue<int>();
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.TryGetComponent(out PickupObject pickupObject))
+            if (other.gameObject.TryGetComponent(out PickupCoin pickupObject))
             {
                 _moneys.Enqueue(pickupObject.Value);
                 pickupObject.PickUp();

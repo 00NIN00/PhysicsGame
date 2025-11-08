@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Game.Scripts
 {
     public class Wallet : MonoBehaviour
     {
-        private PickupSystem _pickupSystem;
+        private PickupCoinsSystem _pickupCoinsSystem;
         
         private int _value;
 
@@ -15,12 +12,12 @@ namespace _Game.Scripts
 
         private void Awake()
         {
-            _pickupSystem = GetComponent<PickupSystem>();
+            _pickupCoinsSystem = GetComponent<PickupCoinsSystem>();
         }
 
         private void Update()
         {
-            if (_pickupSystem.TryGet(out int money))
+            if (_pickupCoinsSystem.TryGet(out int money))
             {
                 Add(money);
             }
