@@ -33,6 +33,7 @@ public class GameRules : MonoBehaviour
     public void Restart()
     {
         _timer.Reset();
+        _wallet.Reset();
     }
 
     private void Win()
