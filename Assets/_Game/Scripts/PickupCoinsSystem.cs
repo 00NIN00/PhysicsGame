@@ -1,29 +1,18 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Game.Scripts
 {
-    public class PickgupCoinsSystem : MonoBehaviour
+    public class PickupCoinsSystem : MonoBehaviour
     {
-        private Queue<int> _moneys =  new Queue<int>();
+        [SerializeField] private Wallet _wallet;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent(out PickupCoin pickupObject))
             {
-                _moneys.Enqueue(pickupObject.Value);
+                _wallet.Add(pickupObject.Value);
                 pickupObject.PickUp();
             }
-        }
-        
-        public bool TryGet(out int value)
-        {
-            value = 0;
-
-            if (_moneys.Count <= 0) return false;
-            
-            value = _moneys.Dequeue();
-            return true;
         }
     }
 }
